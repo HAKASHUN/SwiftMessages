@@ -233,7 +233,7 @@ class Presenter: NSObject, UIGestureRecognizerDelegate {
                 self.translationConstraint.constant = -self.bounceOffset
                 self.view.superview?.layoutIfNeeded()
                 }, completion: { completed in
-                    completion(completed: completed)
+                    completion(completed: true)
             })
         }
     }
@@ -250,7 +250,7 @@ class Presenter: NSObject, UIGestureRecognizerDelegate {
                         viewController.uninstall()
                     }
                     self.maskingView.removeFromSuperview()
-                    completion(completed: completed)
+                    completion(completed: true)
             })
 // TODO the spring animation makes the interactive hide transition smoother, but
 // TODO the added delay due to damping makes status bar style transitions look bad.
